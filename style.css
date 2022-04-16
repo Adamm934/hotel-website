@@ -56,7 +56,115 @@ body{
     background-color: var(--color-quaternary);
 }
 
+/* 12 cols first and last will grab space remaining  */
+/* Line 1 to 13 start end 1 */
+/*  line 2 to 12 cnt start end */
+
 .container {
     display: grid;
-    grid-template-columns:1fr repeat(10, minmax(mix-content,110px)) 1fr;
+    grid-template-columns:[container-start] 1fr [center-start] repeat(10, [col-start] minmax(min-content,110px) [col-end]) [center-end] 1fr [container-end];
+    grid-template-rows: 100vh repeat(8, min-content);
 }
+
+.container > * {
+    font-size: 2rem;
+}
+
+/* MAIN STYLING */
+ header#header {
+     background-color: var(--color-primary);
+     /* placing header according to grid container */
+     grid-column: container-start / container-end;
+     
+
+ }
+
+ /* BOOKING CONT SECT setting grid prop */
+
+ section#booking-content {
+     background-color: var(--color-secondary);
+     grid-column: center-start / col-end 6;
+     height: 400px;
+ }
+
+ /* BOOKING SECT / THIS SECT WILL HAVE SIMPLE HARD CODED DATE / LATER I MIGHT ADD JS FUNCTIONALITY TO CHOOSE ACTUAL DATE */
+
+ section#booking-date {
+     background-color: var(--color-tertiary);
+     grid-column: col-start 7 / center-end;
+     height: 400px;
+ }
+
+/* VILLAS SECTION GRID CONFIGURATION */
+
+ section#villas {
+     background-color: var(--color-primary);
+    grid-column: container-start / container-end ;
+    height: 400px;
+ }
+
+ /* MOTTTO SECT */
+
+ section#motto {
+     background-color: var(--color-primary);
+    grid-column: container-start / container-end ;
+    height: 400px;
+ }
+
+ /* EVENTS CONTENT  */
+
+ section#events-content {
+     background-color: var(--color-tertiary);
+     grid-column: container-start / col-end 9;
+     height: 400px;
+ }
+
+ section#events-date {
+     background-color: var(--color-primary);
+     grid-column: col-start 10 / center-end;
+     height: 400px;
+ }
+
+ /* gallery vertical */
+
+section#gallery-text {
+    background-color: var(--color-tertiary);
+    grid-column: center-start / col-end 1;
+    height: 400px;
+}
+/* GALLERY CAROUSEL */
+
+section#gallery-carousel {
+    background-color: var(--color-secondary);
+    grid-column: col-start 2 / container-end;
+    height: 400px;
+}
+
+section#features-content {
+    background-color: var(--color-primary);
+    grid-column: container-start / col-end 9;
+    height: 400px;
+}
+
+section#features-text {
+    background-color: var(--color-secondary);
+    grid-column: col-start 10 / center-end;
+    height: 400px;
+}
+
+/* testimonials */
+
+section#testimonials{
+    background-color: var(--color-tertiary);
+    grid-column: center-start / center-end;
+    height: 400px;
+}
+
+/* footer */
+
+footer {
+    background-color: var(--color-primary);
+    grid-column: container-start / container-end;
+    height: 400px;
+}
+
