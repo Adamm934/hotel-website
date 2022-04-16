@@ -1,0 +1,51 @@
+/* RESET */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* REUSABLE COMPONENTS */
+
+html {
+    font-size: 62.5%;
+
+    /* custom properties  ///*/
+
+    /* COLORS */
+
+    --color-primary: #730039;
+    --color-primary-light: hsl(330, 100%, 23%, 0.6);
+    --color-primary-dark: hsl(330, 100%, 23%, 0.9);
+
+
+    --color-secondary: #ffc513;
+
+    --color--secondary-light: hsl(45, 100%, 54%, 0.6);
+    --color--secondary-dark: hsl(45, 100%, 54%, 0.9);
+
+
+    --color-tertiary: #ff724c;
+    --color-tertiary-light: hsl(13, 100%, 65%, 0.6);
+    --color-tertiary-dark: hsl(13, 100%, 65%, 0.9);
+
+    --color-quaternary: #f6eedf;
+    --color-quaternary-light: hsl(39, 56%, 92%,0.6);
+    --color-quaternary-dark: hsl(39, 56%, 92%,0.9);
+
+    /* TRANSITIONS */
+
+    --transition-duration: 0.3s;
+
+    /* section title & font size */
+
+    --font-size-title: calc(2rem + 2vw);
+
+    /* SECTION PADDING AS IT ALL WILL BE THE SAME FOR ALL SECTIONS */
+
+    --padding-section: 8vh 3vw;
+
+
+}
