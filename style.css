@@ -70,14 +70,56 @@ body{
     font-size: 2rem;
 }
 
-/* MAIN STYLING */
+/* Grid structuring */
  header#header {
-     background-color: var(--color-primary);
+     /* background-color: var(--color-primary); */
      /* placing header according to grid container */
+     background: linear-gradient(var(--color-primary-light),var(--color-primary-light)), url(/img/hero.jpg);
      grid-column: container-start / container-end;
-     
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
 
  }
+
+ /* NNAV BAR */
+
+ /* NEED TO FIX POSITION */
+
+ .header__main-nav {
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 2;
+     
+ }
+
+ /* checkbox */
+
+.header__main-nav input[type="checkbox"]{
+    position: absolute;
+    top: 3rem;
+    left: 3rem; 
+    height: 5rem;
+     width: 5rem;
+     opacity: 0;
+     cursor: pointer;
+     z-index: 3;    
+}
+
+/* HAMBURGER */
+
+.header__main-nav--hamburger {
+    position: absolute;
+    top: 3rem;
+    left: 3rem; 
+    height: 5rem;
+     width: 5rem;
+     padding: 1rem;
+     background-color: var(--color-secondary);
+     z-index:2;
+}
+
 
  /* BOOKING CONT SECT setting grid prop */
 
@@ -167,4 +209,35 @@ footer {
     grid-column: container-start / container-end;
     height: 400px;
 }
+
+a:link,
+a:visited {
+    color: var(--color-quaternary);
+    text-decoration: none;
+    font-size: calc(0.5rem + 1vw);
+    padding: 1rem 2rem;
+    border-radius: 0.3rem;
+    position: relative;
+    transition: all var(--transition-duration) cubic-bezier(1, 0, 0, 1);
+    z-index: 1;
+}
+
+p{
+    color: white;
+    font-size: calc(1rem + 1vw);
+    font-weight: 300;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 4rem;
+
+}
+
+i{
+    font-size: var(--font-size-title);
+    color: (var(--color-secondary));
+}
+
+
 
