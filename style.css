@@ -121,7 +121,20 @@ body{
 
      display: flex;
      justify-content: center;
-     align-items: center;
+     place-items: center;
+
+     animation: main-nav 2s;
+}
+
+@keyframes main-nav {
+    0% {
+transform: translateX(150rem) rotate(1800deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) rotate(0);
+        opacity: 1;
+    }
 }
 
 /* hamburger linesss */
@@ -247,12 +260,90 @@ body{
 }
 
 
+/* Header section Text */
+
+.header__logo__content{
+    display: grid;
+
+    grid-template-columns: 1fr minmax(30rem, 1fr) 1fr;
+    grid-template-rows: min-content;
+    height: 90%;
+    justify-items: center;
+}
+
+.header__logo__content--logo {
+    grid-column: 2/3;
+    letter-spacing: 0.2rem;
+}
+
+.header__logo__content--logo span {
+    color: var(--color-tertiary);
+    font-size: 3rem;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+.header__logo__content--content {
+    grid-column: 1 / -1 ;
+    align-self:  center;
+}
+
+.header__logo__content__content__title{
+    font-size: calc(4rem +4vw);
+    font-weight: 300;
+    color: white;
+    text-transform: uppercase;
+    padding: 0 2rem 0 var(--font-size-title);
+    
+}
+
+.header__logo_content__content__para {
+    font-size: calc(1rem + 2vw);
+    font-weight: 500;
+    padding: 2vh 2rem 6vh var(--font-size-title);
+}
+
+.header__logo__content--content__link:link,
+.header__logo__content--content__link:visited{
+    margin-left: var(--font-size-title);
+    border: 0.2rem solid var(--color-tertiary);
+    
+}
+.header__logo__content--content__link:link:before,
+.header__logo__content--content__link:visited:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-tertiary);
+    transform: scaleX(0);
+    transition: all 0.45s cubic-bezier(1, 0, 0, 1);
+    z-index: -1;
+}
+
+.header__logo__content--content__link:hover::before,
+.header__logo__content--content__link:active::before{
+    transform: scaleX(1);
+}
+
+
+
  /* BOOKING CONT SECT setting grid prop */
 
  section#booking-content {
-     background-color: var(--color-secondary);
      grid-column: center-start / col-end 6;
-     height: 400px;
+     padding: var(--padding-section);
+     display: grid;
+     grid-template-rows: repeat(3, max-content);
+     grid-gap:  2vh;
+     
+ }
+
+ .booking-content__title{
+     font-size: var(--font-size-title);
+     padding: 0 2rem 1rem;
  }
 
  /* BOOKING SECT / THIS SECT WILL HAVE SIMPLE HARD CODED DATE / LATER I MIGHT ADD JS FUNCTIONALITY TO CHOOSE ACTUAL DATE */
@@ -366,4 +457,19 @@ i{
 }
 
 
+/* 1000px mARK QUERY FOR DISCOVER MORE TEXT */
 
+@media screen and (max-width: 1000px) {
+    a:link,
+    a:visited{
+        font-size: calc(1rem + 1vw);
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+    /* HEADER SECTION */
+    .header__logo_content__content__para{
+        font-size: 2rem;
+    }
+}
