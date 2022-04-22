@@ -614,6 +614,16 @@ i{
      grid-row-gap: 7vh;
 
     }
+
+    .booking-date__schedule--departure > div,
+    .booking-date__schedule--arrival > div,
+    .booking-date__schedule--guests > div {
+        padding: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: min-content;
+        grid-column-gap: 2vw;
+        place-items: center;
+    }
    
 }
 
@@ -623,5 +633,40 @@ i{
     /* HEADER SECTION */
     .header__logo_content__content__para{
         font-size: 2rem;
+    }
+
+    /* booking date section */
+
+    section#booking-date{
+        grid-template-rows: repeat(2, max-content);
+    }
+
+    .booking-date__schedule--departure > div,
+    .booking-date__schedule--arrival > div,
+    .booking-date__schedule--guests > div {
+        padding: 4rem;
+        grid-template-columns: min-content;
+        
+    }
+    /* booking content section */
+
+    .booking__content__para{
+        font-size: 1.5rem;
+    }
+}
+
+/* 400px mark media */
+
+@media screen and (max-width: 400px){
+    /* booking date section */
+    .booking-date__schedule {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: auto;
+        grid-row-gap: 4vh;
+    }
+
+    .booking-date__contact{
+        justify-self: center;
+        padding: 2rem;
     }
 }
