@@ -363,7 +363,8 @@ transform: translateX(150rem) rotate(1800deg);
      padding: 2rem;
  }
 
- section#booking-content p {
+ section#booking-content p,
+ .booking-date__contact p{
       color: var(--color-primary);
  }
 
@@ -422,7 +423,58 @@ transform: translateX(150rem) rotate(1800deg);
     display: grid;
     grid-template-rows: repeat(3 ,1 fr);
     place-items: center;
+    position: relative;
  }
+
+ .booking-date__schedule--departure > div::before,
+ .booking-date__schedule--arrival > div::before,
+ .booking-date__schedule--guests > div::before {
+     content: '';
+     position: absolute;
+     bottom: 100%;
+     left: 50%;
+     margin-left: -1rem;
+     border-width: 1rem;
+     border-style: solid;
+     border-color: transparent transparent var(--color-secondary) transparent ;
+ }
+
+ .booking-date__schedule--departure > div p:nth-of-type(2),
+ .booking-date__schedule--arrival > div p:nth-of-type(2),
+ .booking-date__schedule--guests > div p:nth-of-type(2){
+     font-size: 3rem;
+     font-weight: 700;
+ }
+
+ .booking-date__contact {
+     align-self: end;
+ }
+
+ .booking-date__contact--link:link,
+ .booking-date__contact--link:visited {
+     background-color: var(--color-secondary);
+     color: white;
+     transition: all var(--transition-duration) ease-in-out;
+ }
+
+ .booking-date__contact--link:hover,
+ .booking-date__contact--link:active {
+     color: var(--color-secondary);
+     background-color: white;
+     border: 0.1rem var(--color-secondary) solid;
+ }
+
+ .booking-date__contact p:first-of-type {
+     margin-top: 4rem;
+ }
+
+ .booking-date__contact p:first-of-type,
+ .booking-date__contact p:nth-of-type(2),
+ .booking-date__contact p:nth-of-type(3){
+     font-size: 2rem;
+ }
+ 
+
 /* VILLAS SECTION GRID CONFIGURATION */
 
  section#villas {
@@ -535,6 +587,37 @@ i{
     }
     
 }
+
+/* 800 media query */
+@media screen and (max-width: 800px){
+    /* BOOKING CONTENT SEC */
+
+    
+
+    section#booking-content{
+        padding: 4vh 3vw;
+        grid-column: center-start / center-end;
+    }
+
+    .booking__content__title{
+        text-align: center;
+    }
+
+    .booking__content__title::after {
+        width: 20%;
+        left: 40%;
+    }
+    /* booking date sect */
+    section#booking-date{
+     padding: 4vh 3vw;
+     grid-column: center-start / center-end;
+     grid-row-gap: 7vh;
+
+    }
+   
+}
+
+/* 600 media query */
 
 @media screen and (max-width: 600px){
     /* HEADER SECTION */
