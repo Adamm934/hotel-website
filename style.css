@@ -341,19 +341,88 @@ transform: translateX(150rem) rotate(1800deg);
      
  }
 
- .booking-content__title{
+ .booking__content__title{
      font-size: var(--font-size-title);
      padding: 0 2rem 1rem;
+     font-weight: 300;
+     position: relative;
+ }
+
+ .booking__content__title::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 15%;
+     height: 0.2rem;
+     width: 30%;
+
+     background-color: var(--color-secondary);
+ }
+
+ .booking__content__para{
+     padding: 2rem;
+ }
+
+ section#booking-content p {
+      color: var(--color-primary);
+ }
+
+ .booking__content__icons {
+    margin-left: 2rem;
+
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+ }
+
+ .booking__content__icons--weather,
+ .booking__content__icons--time {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    grid-template-rows: 10vh;
+    justify-items: center;
  }
 
  /* BOOKING SECT / THIS SECT WILL HAVE SIMPLE HARD CODED DATE / LATER I MIGHT ADD JS FUNCTIONALITY TO CHOOSE ACTUAL DATE */
 
  section#booking-date {
-     background-color: var(--color-tertiary);
      grid-column: col-start 7 / center-end;
-     height: 400px;
+     padding: var(--padding-section);
+
+     display: grid;
+     grid-template-rows: repeat(2, 1fr);
  }
 
+ .booking-date__schedule {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-column-gap: 2vw;
+     place-items: center;
+ }
+
+ .booking-date__schedule--departure,
+ .booking-date__schedule--arrival,
+ .booking-date__schedule--guests{
+     display: grid;
+     grid-row-gap: 3vh;
+ }
+
+ .booking-date__schedule--departure h5,
+ .booking-date__schedule--arrival h5,
+ .booking-date__schedule--guests h5{
+     font-size: calc(1rem +1vw);
+     text-align: center;
+ }
+/* child selector */
+ .booking-date__schedule--departure > div,
+ .booking-date__schedule--arrival > div,
+ .booking-date__schedule--guests > div {
+    background-color: var(--color-secondary);
+    padding: 2rem 4rem;
+    display: grid;
+    grid-template-rows: repeat(3 ,1 fr);
+    place-items: center;
+ }
 /* VILLAS SECTION GRID CONFIGURATION */
 
  section#villas {
@@ -453,7 +522,7 @@ li {
 
 i{
     font-size: var(--font-size-title);
-    color: (var(--color-secondary));
+    color: var(--color-secondary);
 }
 
 
